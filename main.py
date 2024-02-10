@@ -74,13 +74,13 @@ with main:
         no_b = r.button(key= "no",label="NO")
     main.divider()
     if no_b and st.session_state.desc_id == 0:
-        W_MSG(msg="jajajaja pendeja, sabia que ibas a poner que NO. Intenta de nuevo.", phone="34670890600")
+        W_MSG(msg="jajajaja pendeja, sabia que ibas a poner que NO. Intenta de nuevo.", phone="34613685436")
         st.session_state.desc_id = -1
         st.snow()
     elif si_B and st.session_state.desc_id == -1:
-        W_MSG(msg=f"Ya habia dicho que no de primera, pero se lo dejo pasar porque la quiero. {ok_si}", phone="34670890600")
+        W_MSG(msg=f"Ya habia dicho que no de primera, pero se lo dejo pasar porque la quiero. {ok_si}", phone="34613685436")
         st.session_state.desc_id = 0
         st.balloons()
     elif si_B and st.session_state.desc_id == 0:
-        W_MSG(msg="ok_si", phone="34670890600")
+        W_MSG(msg="ok_si", phone="34613685436")
         st.balloons()
