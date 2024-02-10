@@ -56,6 +56,12 @@ if "desc_id" not in st.session_state:
 if "allow_no_b" not in st.session_state:
     st.session_state.allow_no_b = False
 
+def flag():
+    if st.session_state.desc_id == -1:
+        st.error("Hey!! No tiene gracia que le des tanto al boton de que no quieres ser mi novia")
+        st.session_state.allow_no_b =  True
+
+
 main = st.container()
 with main:
     main.header("A mi manera boba y porque no te voy a tener a mi lado el 14", divider='rainbow')
@@ -63,22 +69,18 @@ with main:
     main.divider()
     main.markdown(Punchline, unsafe_allow_html=True)
     l, c, r = main.columns(3)
-    with l:
-        si_B = l.button(label="SI", on_click=None)
-    # with c:
-    #     c.markdown("<h3> O </h3>", unsafe_allow_html=True)
     with r:
-        si_B = r.button(label="SI", on_click=None)
-        no_b = r.button(label="NO")
+        si_B = r.button(key= "si", label="SI", on_click=flag(), disabled=st.session_state.allow_no_b)
+        no_b = r.button(key= "no",label="NO")
     main.divider()
     if no_b and st.session_state.desc_id == 0:
-        W_MSG(msg="jajajaja pendeja, sabia que ibas a poner que NO. Intenta de nuevo.", phone="34613685436")
+        W_MSG(msg="jajajaja pendeja, sabia que ibas a poner que NO. Intenta de nuevo.", phone="34670890600")
         st.session_state.desc_id = -1
         st.snow()
     elif si_B and st.session_state.desc_id == -1:
-        W_MSG(msg=f"Ya habia dicho que no de primera, pero se lo dejo pasar porque la quiero. {ok_si}", phone="34613685436")
+        W_MSG(msg=f"Ya habia dicho que no de primera, pero se lo dejo pasar porque la quiero. {ok_si}", phone="34670890600")
         st.session_state.desc_id = 0
         st.balloons()
     elif si_B and st.session_state.desc_id == 0:
-        W_MSG(msg="ok_si", phone="34613685436")
+        W_MSG(msg="ok_si", phone="34670890600")
         st.balloons()
