@@ -64,7 +64,7 @@ def flag():
 
 main = st.container()
 with main:
-    main.header("A mi manera boba y porque no te voy a tener a mi lado el 14", divider='rainbow')
+    main.header("Tengo mil maneras de ir a ti:", divider='rainbow')
     main.markdown(intro, unsafe_allow_html=True)
     main.divider()
     main.markdown(Punchline, unsafe_allow_html=True)
