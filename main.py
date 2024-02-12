@@ -70,8 +70,8 @@ with main:
     main.markdown(Punchline, unsafe_allow_html=True)
     l, c, r = main.columns(3)
     with r:
-        si_B = r.button(key= "si", label="SI", on_click=flag(), disabled=st.session_state.allow_no_b)
-        no_b = r.button(key= "no",label="NO")
+        si_B = r.button(key= "si", label="SI")
+        no_b = r.button(key= "no",label="NO", on_click=flag(), disabled=st.session_state.allow_no_b)
     main.divider()
     if no_b and st.session_state.desc_id == 0:
         W_MSG(msg="jajajaja pendeja, sabia que ibas a poner que NO. Intenta de nuevo.", phone="34613685436")
