@@ -82,5 +82,5 @@ with main:
         st.session_state.desc_id = 0
         st.balloons()
     elif si_B and st.session_state.desc_id == 0:
-        W_MSG(msg="ok_si", phone="34613685436")
+        W_MSG(msg=ok_si, phone="34613685436")
         st.balloons()
